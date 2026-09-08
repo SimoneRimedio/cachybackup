@@ -1,0 +1,25 @@
+[[block]]
+block = "custom"
+command = "~/.config/i3/scripts/current-audio-output.sh"
+interval = 3600
+
+[[block]]
+block = "sound"
+format = " $icon $volume "
+show_volume_when_muted = true
+
+[[block]]
+block = "cpu"
+format = " $icon $utilization "
+interval = 2
+
+[[block]]
+block = "temperature"
+format = " $icon $max "
+chip = "k10temp-*"
+interval = 5
+
+[[block]]
+block = "time"
+format = " $timestamp.datetime(f:'%Y-%m-%d %H:%M') "
+interval = 60
