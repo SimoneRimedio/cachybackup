@@ -112,6 +112,7 @@ modemmanager
 mtools
 nano
 nano-syntax-highlighting
+nemo
 netctl
 networkmanager
 networkmanager-openvpn

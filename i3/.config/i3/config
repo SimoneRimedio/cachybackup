@@ -15,6 +15,9 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
 bindsym $mod+d exec --no-startup-id env XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share" j4-dmenu-desktop
 
+#file-system
+bindsym $mod+shift+n exec --no-startup-id nemo
+
 # Cambia il focus delle finestre (Frecce)
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
