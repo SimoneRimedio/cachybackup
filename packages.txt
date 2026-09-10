@@ -54,6 +54,7 @@ ethtool
 exfatprogs
 f2fs-tools
 fastfetch
+featherpad
 ffmpegthumbnailer
 firefox
 firefox-i18n-it
@@ -85,6 +86,8 @@ lib32-vulkan-icd-loader
 libdvdcss
 libgsf
 libopenraw
+libreoffice-fresh
+libreoffice-fresh-it
 libva-nvidia-driver
 lightdm
 lightdm-gtk-greeter
@@ -131,6 +134,7 @@ perl
 pipewire-alsa
 pipewire-pulse
 pkgfile
+playerctl
 plocate
 plymouth
 polybar
