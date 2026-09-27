@@ -19,6 +19,14 @@ cp ~/.config/i3status-rust/config.toml "$DOTFILES/i3status-rust/.config/i3status
 echo "==> Copio i file di i3wsr"
 cp ~/.config/i3wsr/config.toml "$DOTFILES/i3wsr/.config/i3wsr/config.toml"
 
+echo "==> Creo le cartelle dentro dotfiles/ (rofi)"
+mkdir -p "$DOTFILES/rofi/.config/rofi/scripts"
+
+echo "==> Copio i file di rofi"
+cp ~/.config/rofi/config.rasi "$DOTFILES/rofi/.config/rofi/config.rasi"
+cp ~/.config/rofi/powermenu.rasi "$DOTFILES/rofi/.config/rofi/powermenu.rasi"
+cp ~/.config/rofi/scripts/powermenu.sh "$DOTFILES/rofi/.config/rofi/scripts/powermenu.sh"
+
 echo "==> Copio i file di lightdm (servono i permessi sudo)"
 sudo cp /etc/lightdm/lightdm.conf "$DOTFILES/lightdm/etc/lightdm/lightdm.conf"
 sudo cp /etc/lightdm/lightdm-gtk-greeter.conf "$DOTFILES/lightdm/etc/lightdm/lightdm-gtk-greeter.conf"

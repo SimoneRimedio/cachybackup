@@ -1,0 +1,9 @@
+@theme "/home/sim/.config/rofi/config.rasi"
+
+window {
+    width: 15%;
+}
+
+listview {
+    lines: 4;
+}

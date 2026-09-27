@@ -39,7 +39,6 @@ cpupower
 cryptsetup
 device-mapper
 diffutils
-discord
 dmenu
 dmidecode
 dmraid
@@ -103,6 +102,7 @@ lvm2
 ly
 man-db
 man-pages
+mangohud
 mdadm
 meld
 mesa-utils
@@ -129,6 +129,7 @@ opencl-nvidia-580xx
 openssh
 os-prober
 pacman-contrib
+papirus-icon-theme
 paru
 pavucontrol
 perl
@@ -165,6 +166,7 @@ systemd-boot-manager
 texinfo
 ttf-bitstream-vera
 ttf-dejavu
+ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-meslo-nerd
 ttf-opensans
@@ -189,3 +191,4 @@ xl2tpd
 xorg-server
 xorg-xinit
 xorg-xrandr
+xournalpp

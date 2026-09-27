@@ -1,3 +1,6 @@
+exec --no-startup-id ssh-agent -s > ~/.ssh-agent-env
+exec --no-startup-id setxkbmap it
+
 # Tasto Modificatore (Mod4 = Tasto Windows / Super)
 set $mod Mod4
 
@@ -13,7 +16,7 @@ bindsym $mod+Shift+q kill
 
 # Launcher (dmenu)
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
-bindsym $mod+d exec --no-startup-id env XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share" j4-dmenu-desktop
+bindsym $mod+d exec --no-startup-id env XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share" rofi -show drun
 
 #file-system
 bindsym $mod+shift+n exec --no-startup-id nemo
@@ -94,10 +97,26 @@ set $refresh_i3status killall -SIGUSR1 i3status-rs
 bindsym $mod+shift+a exec --no-startup-id ~/.config/i3/scripts/toggle-audio-output.sh
 
 # Power menu
-bindsym $mod+shift+e exec --no-startup-id ~/.config/i3/scripts/power-menu.sh
+bindsym $mod+shift+e exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
 
 # i3wsr (nomi app nei workspace)
 exec_always --no-startup-id i3wsr
 
 #sfondo
 exec_always --no-startup-id ~/.fehbg
+
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+
+# BLUE THEME
+# class                 border  backgr. text    indicator child_border
+client.focused          #321321 #285577 #ffffff #284374   #284374
+client.focused_inactive #333333 #5f676a #ffffff #212121   #212121
+client.unfocused        #333333 #222222 #888888 #222222   #212121
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #284374
+
+client.background       #284374
+
+gaps inner 10
+gaps outer 5
+smart_gaps on
