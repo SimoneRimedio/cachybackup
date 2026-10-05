@@ -4,6 +4,7 @@ alsa-firmware
 alsa-plugins
 alsa-utils
 amd-ucode
+atool
 awesome-terminal-fonts
 base
 base-devel
@@ -57,6 +58,7 @@ featherpad
 ffmpegthumbnailer
 firefox
 firefox-i18n-it
+flameshot
 flatpak
 fsarchiver
 git
@@ -66,8 +68,10 @@ gst-plugin-pipewire
 gst-plugins-bad
 gst-plugins-ugly
 hdparm
+highlight
 hwdetect
 hwinfo
+i2c-tools
 i3-wm
 i3blocks
 i3lock-color
@@ -104,6 +108,7 @@ man-db
 man-pages
 mangohud
 mdadm
+mediainfo
 meld
 mesa-utils
 micro
@@ -112,9 +117,10 @@ modemmanager
 mtools
 nano
 nano-syntax-highlighting
-nemo
 netctl
+network-manager-applet
 networkmanager
+networkmanager-dmenu
 networkmanager-openvpn
 nfs-utils
 nilfs-utils
@@ -126,6 +132,7 @@ nvidia-580xx-dkms
 nvidia-580xx-settings
 nvidia-580xx-utils
 opencl-nvidia-580xx
+openrgb
 openssh
 os-prober
 pacman-contrib
@@ -147,6 +154,7 @@ pv
 python
 python-defusedxml
 python-packaging
+ranger
 realtime-privileges
 rebuild-detector
 reflector
@@ -169,7 +177,9 @@ ttf-dejavu
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-meslo-nerd
+ttf-nerd-fonts-symbols-common
 ttf-opensans
+ueberzug
 ufw
 ufw-extras
 unrar
@@ -184,6 +194,7 @@ wget
 which
 wireplumber
 wpa_supplicant
+xclip
 xdg-user-dirs
 xdg-utils
 xfsprogs

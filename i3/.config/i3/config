@@ -1,4 +1,3 @@
-exec --no-startup-id ssh-agent -s > ~/.ssh-agent-env
 exec --no-startup-id setxkbmap it
 
 # Tasto Modificatore (Mod4 = Tasto Windows / Super)
@@ -19,7 +18,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id env XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share" rofi -show drun
 
 #file-system
-bindsym $mod+shift+n exec --no-startup-id nemo
+bindsym $mod+shift+n exec --no-startup-id kitty -e ranger
 
 # Cambia il focus delle finestre (Frecce)
 bindsym $mod+Left focus left
@@ -81,9 +80,12 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Barra di stato con i3status-rust
-bar {
-    status_command i3status-rs ~/.config/i3status-rust/config.toml
-}
+#bar { 
+#	status_command i3status-rs ~/.config/i3status-rust/config.toml 
+#}
+
+exec_always --no-startup-id killall polybar; polybar main &
+exec_always --no-startup-id nm-applet
 
 # Audio - tasti volume (probabilmente già presenti dall'installer CachyOS)
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -107,16 +109,20 @@ exec_always --no-startup-id ~/.fehbg
 
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
-# BLUE THEME
-# class                 border  backgr. text    indicator child_border
-client.focused          #321321 #285577 #ffffff #284374   #284374
-client.focused_inactive #333333 #5f676a #ffffff #212121   #212121
-client.unfocused        #333333 #222222 #888888 #222222   #212121
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #284374
-
-client.background       #284374
-
 gaps inner 10
 gaps outer 5
 smart_gaps on
+
+# Bordi finestre
+default_border pixel 2
+default_floating_border pixel 2
+hide_edge_borders smart
+
+# Colori finestre (Tema Dracula - Coerente con la barra)
+# class                 border    backgr.   text      indicator child_border
+client.focused          #bd93f9   #282a36   #f8f8f2   #bd93f9   #bd93f9
+client.focused_inactive #6272a4   #282a36   #f8f8f2   #6272a4   #6272a4
+client.unfocused        #21222c   #282a36   #6272a4   #21222c   #21222c
+client.urgent           #ff5555   #282a36   #f8f8f2   #ff5555   #ff5555
+client.placeholder      #282a36   #282a36   #f8f8f2   #282a36   #282a36
+client.background       #282a36

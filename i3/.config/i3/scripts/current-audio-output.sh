@@ -8,7 +8,7 @@ CURRENT=$(pactl list cards | awk -v card="$CARD" '
 ')
 
 if [ "$CURRENT" = "output:analog-stereo+input:analog-stereo" ]; then
-    echo "🎧 Cuffie"
+    echo "󰋋 Cuffie"
 else
-    echo "🔊 Subwoofer"
+    echo "󰓃 Subwoofer"
 fi
