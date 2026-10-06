@@ -8,11 +8,14 @@ mkdir -p "$DOTFILES/i3/.config/i3/scripts"
 mkdir -p "$DOTFILES/polybar/.config/polybar"
 mkdir -p "$DOTFILES/picom/.config/picom"
 mkdir -p "$DOTFILES/fastfetch/.config/fastfetch"
+mkdir -p "$DOTFILES/dunst/.config/dunst"
 mkdir -p "$DOTFILES/lightdm/etc/lightdm"
+mkdir -p "$DOTFILES/Immagini/Sfondi"
+mkdir -p "$DOTFILES/feh/.config/feh"
 
 echo "==> Copio i file di i3"
 cp ~/.config/i3/config "$DOTFILES/i3/.config/i3/config"
-cp ~/.config/i3/scripts/*.sh "$DOTFILES/i3/.config/i3/scripts/"
+cp ~/.config/i3/scripts/*.sh "$DOTFILES/i3/.config/i3/scripts/" 2>/dev/null || true
 
 echo "==> Copio i file di Polybar"
 cp -r ~/.config/polybar/* "$DOTFILES/polybar/.config/polybar/"
@@ -22,6 +25,14 @@ cp ~/.config/picom/picom.conf "$DOTFILES/picom/.config/picom/picom.conf"
 
 echo "==> Copio i file di Fastfetch"
 cp -r ~/.config/fastfetch/* "$DOTFILES/fastfetch/.config/fastfetch/"
+
+echo "==> Copio i file di Dunst"
+cp -r ~/.config/dunst/* "$DOTFILES/dunst/.config/dunst/"
+
+echo "==> Copio gli Sfondi e le configurazioni di feh"
+cp -r ~/Immagini/Sfondi/* "$DOTFILES/Immagini/Sfondi/" 2>/dev/null || true
+cp ~/.fehbg "$DOTFILES/feh/.fehbg" 2>/dev/null || true
+cp -r ~/.config/feh/* "$DOTFILES/feh/.config/feh/" 2>/dev/null || true
 
 echo "==> Copio i file di rofi"
 mkdir -p "$DOTFILES/rofi/.config/rofi/scripts"

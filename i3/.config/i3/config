@@ -17,8 +17,15 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
 bindsym $mod+d exec --no-startup-id env XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share" rofi -show drun
 
-#file-system
+# File-system
 bindsym $mod+shift+n exec --no-startup-id kitty -e ranger
+
+# Screenshot
+# Seleziona un'area e copia negli appunti
+bindsym $Mod+Shift+s exec --no-startup-id sh -c "maim -s | xclip -selection clipboard -t image/png"
+
+# Seleziona un'area e salva il file nella cartella Immagini
+bindsym $mod+Print exec --no-startup-id sh -c "maim -s ~/Immagini/Screenshot/screenshot_$(date +%Y%m%d_%H%M%S).png"
 
 # Cambia il focus delle finestre (Frecce)
 bindsym $mod+Left focus left
@@ -88,10 +95,10 @@ exec_always --no-startup-id killall polybar; polybar main &
 exec_always --no-startup-id nm-applet
 
 # Audio - tasti volume (probabilmente già presenti dall'installer CachyOS)
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# Controllo Volume (Sincronizzato con Polybar)
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 set $refresh_i3status killall -SIGUSR1 i3status-rs
 
@@ -118,11 +125,11 @@ default_border pixel 2
 default_floating_border pixel 2
 hide_edge_borders smart
 
-# Colori finestre (Tema Dracula - Coerente con la barra)
+# Colori finestre (Sunset Lo-Fi)
 # class                 border    backgr.   text      indicator child_border
-client.focused          #bd93f9   #282a36   #f8f8f2   #bd93f9   #bd93f9
-client.focused_inactive #6272a4   #282a36   #f8f8f2   #6272a4   #6272a4
-client.unfocused        #21222c   #282a36   #6272a4   #21222c   #21222c
-client.urgent           #ff5555   #282a36   #f8f8f2   #ff5555   #ff5555
-client.placeholder      #282a36   #282a36   #f8f8f2   #282a36   #282a36
-client.background       #282a36
+client.focused          #e87a90   #201d29   #e6e0eb   #e87a90   #e87a90
+client.focused_inactive #4b465c   #201d29   #e6e0eb   #4b465c   #4b465c
+client.unfocused        #2c2838   #201d29   #6a647a   #2c2838   #2c2838
+client.urgent           #d95361   #201d29   #e6e0eb   #d95361   #d95361
+client.placeholder      #201d29   #201d29   #e6e0eb   #201d29   #201d29
+client.background       #201d29
