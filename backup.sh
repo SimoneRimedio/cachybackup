@@ -48,6 +48,10 @@ cp ~/.config/rofi/config.rasi "$DOTFILES/rofi/.config/rofi/config.rasi"
 cp ~/.config/rofi/powermenu.rasi "$DOTFILES/rofi/.config/rofi/powermenu.rasi"
 cp ~/.config/rofi/scripts/powermenu.sh "$DOTFILES/rofi/.config/rofi/scripts/powermenu.sh"
 
+echo "==> Copio i Font"
+mkdir -p "$DOTFILES/fonts/.local/share/fonts"
+cp -r ~/.local/share/fonts/* "$DOTFILES/fonts/.local/share/fonts/" 2>/dev/null || true
+
 echo "==> Copio i file di lightdm (servono i permessi sudo)"
 sudo cp /etc/lightdm/lightdm.conf "$DOTFILES/lightdm/etc/lightdm/lightdm.conf"
 sudo cp /etc/lightdm/lightdm-gtk-greeter.conf "$DOTFILES/lightdm/etc/lightdm/lightdm-gtk-greeter.conf"
