@@ -9,6 +9,8 @@ mkdir -p "$DOTFILES/polybar/.config/polybar"
 mkdir -p "$DOTFILES/picom/.config/picom"
 mkdir -p "$DOTFILES/fastfetch/.config/fastfetch"
 mkdir -p "$DOTFILES/dunst/.config/dunst"
+mkdir -p "$DOTFILES/kitty/.config/kitty"
+mkdir -p "$DOTFILES/fish/.config/fish"
 mkdir -p "$DOTFILES/lightdm/etc/lightdm"
 mkdir -p "$DOTFILES/Immagini/Sfondi"
 mkdir -p "$DOTFILES/feh/.config/feh"
@@ -28,6 +30,12 @@ cp -r ~/.config/fastfetch/* "$DOTFILES/fastfetch/.config/fastfetch/"
 
 echo "==> Copio i file di Dunst"
 cp -r ~/.config/dunst/* "$DOTFILES/dunst/.config/dunst/"
+
+echo "==> Copio i file di Kitty"
+cp -r ~/.config/kitty/* "$DOTFILES/kitty/.config/kitty/" 2>/dev/null || true
+
+echo "==> Copio i file di Fish"
+cp -r ~/.config/fish/* "$DOTFILES/fish/.config/fish/" 2>/dev/null || true
 
 echo "==> Copio gli Sfondi e le configurazioni di feh"
 cp -r ~/Immagini/Sfondi/* "$DOTFILES/Immagini/Sfondi/" 2>/dev/null || true
